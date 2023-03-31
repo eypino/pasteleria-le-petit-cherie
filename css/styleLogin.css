@@ -1,34 +1,8 @@
-*{
-  padding: 0;
-  margin:0;
-  box-sizing: border-box;
+.bg{
+  background-image: url(../img/login_pic.jpg);
+  background-position: center center;
 }
 body{
-   background: rgb(241, 215, 243);
-}
-.row{
-  background: rgb(246, 244, 244);
-  border-radius: 30px;
-  box-shadow: 12px 12px 22px rgb(158, 157, 157);
-}
-img{
-  margin: 0;
-  padding: 0;
-  border-top-left-radius: 30px;
-  border-bottom-left-radius: 30px;
-}
-.btn1{
-  border: none;
-  outline: none;
-  height: 50px;
-  width: 100%;
-  background-color: black;
-  color: white;
-  border-radius: 4px;
-  font-weight: bold ;
-}
-.btn1:hover{
-  background-color: white;
-  border: 1px solid;
-  color:black;
+  /*background: rgb(232, 212, 233);*/
+  background-color: rgb(232, 212, 233);
 }
