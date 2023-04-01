@@ -2,11 +2,16 @@
 .navbar-dark .navbar-nav .nav-link{
     color:antiquewhite !important;
     font-size:20px;
+    
+}
+
+body{
+    background-color: black !important;
 }
 
 .navbar-dark .navbar-brand{
     color: purple !important;
-    font-size: 50px;
+    font-size: 40px;
 }
 
 .nav-item{
@@ -22,21 +27,34 @@
 }*/
 
 @media only screen and(max-width:600px){
-    header{
-        background-position: 20% 33%;
+    .navbar-dark .navbar-brand{
+        color: purple !important;
+        font-size: 25px;
     }
 }
 
 .navbar-toggler{
-    border:none !important;
+    --border:none !important;
+    color: purple !important;
+    border-color:purple !important;
+    background-color: purple !important;
 }
 
 .navbar-toggler:focus{
     box-shadow: none !important;
 }
+
  .btn-dark{
     font-size: 20px !important;
     color: white !important;
     background-color: purple !important;
 
+}
+
+.dropdown-menu{
+    background-color: purple !important;
+}
+
+.dropdown-item{
+    color: white !important;
 }
