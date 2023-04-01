@@ -1,21 +1,25 @@
 
 .navbar-dark .navbar-nav .nav-link{
-    color:purple !important;
-    font-size: 22px;
+    color:antiquewhite !important;
+    font-size:20px;
 }
 
 .navbar-dark .navbar-brand{
     color: purple !important;
-    font-size: 36px;
+    font-size: 50px;
+}
+
+.nav-item{
+    padding-right: 5px;
 }
 
 
-header{
+/*header{
     height: 100vh;
     min-height: 400px;
     background-size: cover;
-    background-image: url(../img/carrusel1.jpg);
-}
+    --background-image: url(../img/carrusel1.jpg);
+}*/
 
 @media only screen and(max-width:600px){
     header{
