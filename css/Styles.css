@@ -5,10 +5,18 @@
     
 }
 
-body{
+.body-background{
     background-color: black !important;
 }
 
+  footer{
+    padding: 0% !important;
+    margin: 0% !important;
+    text-align: center;
+    background-color:#212F3D;
+    color: whitesmoke;
+    font-size:smaller;
+  }
 .navbar-dark .navbar-brand{
     color: purple !important;
     font-size: 40px;
