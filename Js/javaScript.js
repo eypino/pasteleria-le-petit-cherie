@@ -8,10 +8,13 @@ function checkBlankLogin(){
 }
 /* JS LOGIN CONTRASEÑA/EMAIL ERRONEO  */
 function checkBlankRegistro(){
-  if (document.getElementById('email').value =="ejemplo@mail.com" && document.getElementById('password').value=="12345") {
-    alert('Campoasdasfsdgt');
+  if (document.getElementById('email').value =="ejemplo@mail.com" && document.getElementById('password').value=="12345" ) {
+    alert('Sesió n iniciada exitosamente');
     return false;
-  }else{
+  }else if (document.getElementById('email').value ==""){
+
+  }
+  else{
     alert('Email o contraseña errónea')
   }
 }
