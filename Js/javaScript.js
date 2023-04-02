@@ -9,7 +9,7 @@ function checkBlankLogin(){
 /* JS LOGIN CONTRASEÑA/EMAIL ERRONEO  */
 function checkBlankRegistro(){
   if (document.getElementById('email').value =="ejemplo@mail.com" && document.getElementById('password').value=="12345" ) {
-    alert('Campoasdasfsdgt');
+    alert('Sesió n iniciada exitosamente');
     return false;
   }else if (document.getElementById('email').value ==""){
 
