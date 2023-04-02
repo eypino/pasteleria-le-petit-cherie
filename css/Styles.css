@@ -5,8 +5,12 @@
     
 }
 
+
 .body-background{
     background-color: black !important;
+}
+.body-background2{
+    background-color:antiquewhite !important;
 }
 
   footer{
@@ -27,12 +31,11 @@
 }
 
 
-/*header{
-    height: 100vh;
-    min-height: 400px;
-    background-size: cover;
+header{
+    height: 10%;
+    min-height: 150px;
     --background-image: url(../img/carrusel1.jpg);
-}*/
+}
 
 @media only screen and(max-width:600px){
     .navbar-dark .navbar-brand{
