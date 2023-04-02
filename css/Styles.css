@@ -21,6 +21,40 @@ body{
 .body-background2{
     background-color:rgb(232, 212, 233);
 }
+.carrito{
+    min-height: 70%;
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.table-productos{
+    display:flexbox;
+}
+.table-productos {
+    width: 30%;
+    object-fit: contain;
+    border-radius: 6px;
+    margin-right: 20px;
+}
+.table-cantidad{
+    width: 30%;
+    border: none;
+    outline: 0;
+    font-size: 16px;
+    font-weight: 700;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.table-precio{
+    max-width: 200px;
+    width: 30%;
+}
+.img-carrito{
+    width: 50%;
+    height: 50%;
+    align-self: center;
+}
 
   footer{
     padding: 0% !important;
