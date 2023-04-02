@@ -4,7 +4,16 @@
     font-size:20px;
     
 }
+body{
+    /*background: rgb(232, 212, 233);*/
+    background-color: rgb(232, 212, 233);
+  }
 
+.bg{
+    background-image: url(../img/login_pic.jpg);
+    background-position: center center;
+  
+  }
 
 .body-background{
     background-color: black !important;
