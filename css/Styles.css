@@ -74,9 +74,9 @@ body{
 }
 
 
-header{
+.header-visible{
     height: 10%;
-    min-height: 150px;
+    min-height: 136px;
     --background-image: url(../img/carrusel1.jpg);
 }
 
@@ -112,4 +112,17 @@ header{
 
 .dropdown-item{
     color: white !important;
+}
+
+.table{
+    color:purple !important;
+    margin-left: 2%;
+    margin-right: 2%;
+    align-self: center;
+    max-width: 96%;
+}
+
+.text-carrito{
+    color: purple;
+    font-weight: bold;
 }
