@@ -116,10 +116,10 @@ body{
 
 .table{
     color:purple !important;
-    margin-left: 2%;
-    margin-right: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
     align-self: center;
-    max-width: 96%;
+    max-width: 90%;
 }
 
 .text-carrito{
