@@ -18,3 +18,15 @@ function checkBlankRegistro(){
     alert('Email o contraseña errónea')
   }
 }
+/* JS Cambiar contraseña  */
+function checkPass(){
+  var contr1=document.getElementById('password1').value;
+  var contr2=document.getElementById('password2').value;
+  if (contr1==contr2 ) {
+    alert('Contraseña modificada');
+    return false;
+  }
+  else{
+    alert('Contraseñas no coinciden')
+  }
+}
