@@ -33,8 +33,9 @@ function checkPass(){
 
 function checkEmail(){
   var email1=document.getElementById('email12').value;
+  var validEmail =  /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
 
-  if (email1=="ejemplo@mail.com") {
+  if (validEmail.test(email1)) {
     alert('Te enviamos un código revisa tu correo');
     return false;
   }else if (document.getElementById('email12').value ==""){
