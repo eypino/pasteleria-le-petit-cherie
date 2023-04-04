@@ -30,3 +30,18 @@ function checkPass(){
     alert('Contraseñas no coinciden')
   }
 }
+
+function checkEmail(){
+  var email1=document.getElementById('email12').value;
+
+  if (email1=="ejemplo@mail.com") {
+    alert('Te enviamos un código revisa tu correo');
+    return false;
+  }else if (document.getElementById('email12').value ==""){
+    alert('Por favor ingrese su correo');
+    
+  }
+  else{
+    alert('Correo no registrado')
+  }
+}
