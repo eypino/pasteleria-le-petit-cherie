@@ -62,7 +62,7 @@ body{
     text-align: center;
     background-color:#212F3D;
     color: whitesmoke;
-    font-size:smaller;
+    font-size: 15px;
   }
 .navbar-dark .navbar-brand{
     color: purple !important;
