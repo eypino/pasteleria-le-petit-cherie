@@ -219,7 +219,7 @@ $('#fechaNac').on('input', function() {
   
   // Obtiene la diferencia en milisegundos entre la fecha actual y la fecha de nacimiento
   let diferenciaFechas = fechaActual - fechaNacimiento;
-  
+    
   // Convierte la diferencia en milisegundos a años
   let edad = Math.floor(diferenciaFechas / (1000 * 60 * 60 * 24 * 365));
   
