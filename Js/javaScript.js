@@ -401,5 +401,27 @@ $('#botonBorrarReg').on('click', function() {
 $('#terminosTexto').click(function() {
   $('#modalTerminos').modal('show');
 });
+//VALIDACION DE LOGIN
+$(document).ready(function() {
+  $('#botonIniciarSesion').click(function() {
+    var email = $('#emailLogin').val();
+    var password = $('#passwordLogin').val();
+    
+    // Verificar si el campo de correo electrónico está vacío
+    if (email == '') {
+      $('#emailError').text('Por favor ingrese su correo electrónico').css('color', 'red');
+    } else {
+      $('#emailError').text('');
+    }
+    
+    // Verificar si el campo de contraseña está vacío
+    if (password == '') {
+      $('#passwordError').text('Por favor ingrese su contraseña').css('color', 'red');
+    } else {
+      $('#passwordError').text('');
+    }
+  });
+});
+
 
 
