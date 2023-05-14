@@ -200,7 +200,7 @@ $('#correoReg').keyup(function() {
 });
 
 
-//
+//NACIMIENTO
 
 if (!fechaNac) {
   errores.push({campo: '#fechaNac', mensaje: 'Por favor, ingrese su fecha de nacimiento'});
@@ -385,3 +385,21 @@ if (errores.length > 0) {
   $('input').removeClass('error');
 }
 });
+
+///LIMPIAR CAMPOS
+$('#botonBorrarReg').on('click', function() {
+  $('input[type="text"]').val('');
+  $('input[type="password"]').val('');
+  $('input[type="email"]').val('');
+  $('input[type="tel"]').val('');
+  $('input[type="date"]').val('');
+  $('select').prop('selectedIndex', 0);
+  $('.mensaje-error').remove();
+  $('.error').removeClass('error');
+});
+//TERMINOS Y CONDICIONES
+$('#terminosTexto').click(function() {
+  $('#modalTerminos').modal('show');
+});
+
+
