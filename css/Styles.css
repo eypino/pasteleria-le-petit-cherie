@@ -126,11 +126,7 @@ body{
     color: purple;
     font-weight: bold;
 }
-/*ERRORES REGISTRO*/
-.error {
-    border: 2px solid red;
-    
-  }
+
 /*QUITAR FLECHAS DEL INPUT NUMBER*/  
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 

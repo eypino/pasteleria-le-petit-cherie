@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 
@@ -79,7 +80,7 @@
             <div class="col-5 mt-3 ps-lg-5 text-start mx-auto ">
               <label>Nombre </label>
               <input class="w-75 form-control" type="text" name="Nombres" id="nombreReg"  placeholder="Ingrese su primer y segundo nombre">
-			  <span class="mensaje-error" id="nombreError"></span>	
+			        <span class="mensaje-error" id="nombreError"></span>	
 			</div>
 			<!--APELLIDOS -->
             <div class="col-5 mt-3 ps-lg-5 text-start">
@@ -146,7 +147,41 @@
 							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 						</div>
 						<div class="modal-body">
-							
+							<h4>Registro de cuenta</h4>
+							<ul>
+							  <li>Para registrarse en nuestro sitio web y utilizar nuestros servicios en línea, los clientes deben proporcionar información personal verdadera y precisa. La información de registro debe incluir su nombre completo, dirección de correo electrónico y dirección de envío. El registro de una cuenta implica la aceptación de estos términos y condiciones.</li>
+							</ul>
+						  
+							<h4>Privacidad</h4>
+							<ul>
+							  <li>La información personal del cliente será tratada con absoluta confidencialidad y se utilizará únicamente para procesar pedidos y mejorar la experiencia del cliente en nuestro sitio web. No se compartirá con terceros, a menos que sea requerido por ley.</li>
+							</ul>
+						  
+							<h4>Seguridad de la cuenta</h4>
+							<ul>
+							  <li>Es responsabilidad del cliente mantener la confidencialidad de su información de inicio de sesión y proteger su cuenta de accesos no autorizados. La pastelería no será responsable de cualquier daño o pérdida causada por el uso no autorizado de una cuenta.</li>
+							</ul>
+						  
+							<h4>Pedidos</h4>
+							<ul>
+							  <li>Todos los pedidos realizados en nuestro sitio web están sujetos a disponibilidad de stock y verificación de pago. Nos reservamos el derecho de cancelar cualquier pedido por cualquier motivo, incluyendo pero no limitado a errores de precios, errores tipográficos o falta de stock.</li>
+							</ul>
+						  
+							<h4>Precios y pagos</h4>
+							<ul>
+							  <li>Los precios de nuestros productos se muestran en nuestra página web y están sujetos a cambios sin previo aviso. Los clientes pueden realizar pagos en línea utilizando los métodos de pago disponibles en nuestro sitio web. Todos los pagos son procesados de forma segura y cumplen con los estándares de seguridad de la industria.</li>
+							</ul>
+						  
+							<h4>Envío y entrega</h4>
+							<ul>
+							  <li>Ofrecemos envío a domicilio en ciertas áreas, sujeto a cargos adicionales. Los plazos de entrega son estimados y pueden variar dependiendo de la disponibilidad de stock y las condiciones del envío. Nos esforzamos por cumplir con los plazos de entrega estimados, pero no nos hacemos responsables de cualquier retraso en la entrega causado por circunstancias fuera de nuestro control.</li>
+							</ul>
+						  
+							<h4>Cambios y devoluciones</h4>
+							<ul>
+							  <li>Si el cliente recibe un producto defectuoso o incorrecto, debe notificarlo a la pastelería dentro de las 24 horas de haber recibido el producto. La pastelería se reserva el derecho de reemplazar o reembolsar cualquier producto defectuoso o incorrecto, sujeto a nuestra discreción. No se aceptan cambios o devoluciones de productos personalizados.</li>
+						   
+						  
 						<div class="modal-footer">
 							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
 						</div>
