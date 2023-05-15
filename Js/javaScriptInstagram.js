@@ -1,5 +1,5 @@
 $(function(){
-    const token = 'IGQVJXRkE3SHRkTnJYTDR0a1NRLVlXNE81VUJTTmwyTzBfLVgxTFUxM09Kc2tDV292Y1FFemwxclBPb19iSUJMV1R0TzlzRWg0QzFpblJvcXk2ak9PQTF0U1hFekFCVVN6cDc2NDV2UFVWcTZAVMHpJdwZDZD';
+    const token = '';
     const url = `https://graph.instagram.com/me/media?fields=media_url,media_type,caption,permalink&refresh_access_token?grant_type=ig_refresh_token&&access_token=${token}`; 
 
     $.get(url).then(function(response){
@@ -12,10 +12,10 @@ $(function(){
             let titulo=feed.caption !== null ? feed.caption : '';
             let tipo = feed.media_type;
             if (tipo === 'VIDEO'){
-                contenido+='<div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 col-xxl-4"><video style="width: 28rem;height: 30rem;" controls><source src="'+feed.media_url+'" type="video/mp4"></video></div>';  
+                contenido+='<div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 col-xxl-4 image-overflow"><video style="width: 28rem;height: 30rem;" controls><source src="'+feed.media_url+'" type="video/mp4"></video></div>';  
             }
             else if (tipo === 'IMAGE'){
-                contenido+='<div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 col-xxl-4"><img style="width: 28rem;height: 30rem;" title="'+titulo+'" src="'+feed.media_url+'" onclick="window.open(\''+feed.permalink+'\');"></div>';
+                contenido+='<div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 col-xxl-4 image-overflow"><img style="width: 28rem;height: 30rem;" title="'+titulo+'" src="'+feed.media_url+'" onclick="window.open(\''+feed.permalink+'\');"></div>';
             }
         }
         contenido+='</div>';
