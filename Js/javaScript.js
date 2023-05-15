@@ -145,6 +145,7 @@ $('#apellidoReg').on('input', function() {
   let apellido = $(this).val().trim();
   if (!apellido) {
     $(this).addClass('error');
+
     $(this).next('.mensaje-error').remove();
     $(this).after('<span class="mensaje-error">Por favor, ingrese su apellido</span>');
   } else {
