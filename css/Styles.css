@@ -77,8 +77,9 @@ body{
 .header-visible{
     height: 10%;
     min-height: 136px;
-    --background-image: url(../img/carrusel1.jpg);
+    
 }
+
 
 @media only screen and(max-width:600px){
     .navbar-dark .navbar-brand{
