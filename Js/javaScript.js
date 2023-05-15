@@ -114,7 +114,7 @@ $('#botonCompletarReg').click(function() {
 
   let errores = [];
 
-  //
+//NOMBRES
 if (!nombres || nombres.length < 2) {
   errores.push({campo: '#nombreReg', mensaje: 'Por favor, ingrese un mínimo de dos caracteres'});
 } else {
@@ -126,14 +126,15 @@ $('#nombreReg').on('input', function() {
   if (!nombres) {
     $(this).addClass('error');
     $(this).next('.mensaje-error').remove();
-    $(this).after('<span class="mensaje-error">Por favor, ingrese su nombre</span>');
+    $(this).after('<span class="mensaje-error error">Por favor, ingrese su nombre</span>');
   } else {
     $(this).removeClass('error');
     $(this).next('.mensaje-error').remove();
   }
 });
 
-//
+
+//APELLIDOS
 if (!apellidos) {
   errores.push({campo: '#apellidoReg', mensaje: 'Por favor, ingrese su apellido'});
 } else {
@@ -152,7 +153,7 @@ $('#apellidoReg').on('input', function() {
   }
 });
 
-//
+//RUT
 
 if (!rut) {
   errores.push({campo: '#rutReg', mensaje: 'Por favor, ingrese su RUT'});
@@ -178,7 +179,7 @@ $('#rutReg').on('input', function() {
     $(this).after('<span class="mensaje-error">El RUT ingresado no es válido</span>');
   }
 });
-//
+//CORREO
 
 if (!correo) {
   errores.push({campo: '#correoReg', mensaje: 'Por favor, ingrese su correo electrónico'});
@@ -373,6 +374,7 @@ errores.forEach(function(error) {
 
 if (errores.length === 0) {
   alert('Todos los campos están completos y correctos');
+  window.location.href = '../index.html'; // redirigir a la página de inicio
 }
 
 if (errores.length > 0) {
@@ -406,22 +408,49 @@ $(document).ready(function() {
   $('#botonIniciarSesion').click(function() {
     var email = $('#emailLogin').val();
     var password = $('#passwordLogin').val();
-    
-    // Verificar si el campo de correo electrónico está vacío
-    if (email == '') {
-      $('#emailError').text('Por favor ingrese su correo electrónico').css('color', 'red');
+    var errores = [];
+
+    // Verificar si el campo de correo electrónico está vacío o no es válido
+    if (!email) {
+      $('#emailError').text('Por favor ingrese su correo electrónico');
+      $('#emailLogin').addClass('error');
+      errores.push('email');
+    } else if (!validarEmail(email)) {
+      $('#emailError').text('Por favor ingrese un correo electrónico válido');
+      $('#emailLogin').addClass('error');
+      errores.push('email');
     } else {
       $('#emailError').text('');
+      $('#emailLogin').removeClass('error');
     }
     
-    // Verificar si el campo de contraseña está vacío
-    if (password == '') {
-      $('#passwordError').text('Por favor ingrese su contraseña').css('color', 'red');
+    // Verificar si el campo de contraseña está vacío o es menor a 8 caracteres
+    if (!password) {
+      $('#passwordError').text('Por favor ingrese su contraseña');
+      $('#passwordLogin').addClass('error');
+      errores.push('password');
+    } else if (password.length < 8) {
+      $('#passwordError').text('La contraseña debe tener al menos 8 caracteres');
+      $('#passwordLogin').addClass('error');
+      errores.push('password');
     } else {
       $('#passwordError').text('');
+      $('#passwordLogin').removeClass('error');
+    }
+    
+    // Si hay errores, prevenir el envío del formulario
+    if (errores.length > 0) {
+      return false;
     }
   });
 });
+
+// Función para validar un correo electrónico
+function validarEmail(email) {
+  var re = /\S+@\S+\.\S+/;
+  return re.test(email);
+}
+
 
 
 
