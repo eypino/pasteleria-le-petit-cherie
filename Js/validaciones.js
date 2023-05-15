@@ -227,7 +227,7 @@ $('#fechaNac').on('input', function() {
   if (edad < 18) {
     $(this).addClass('error');
     $(this).next('.mensaje-error').remove();
-    $(this).after('<span class="mensaje-error">Debe ser mayor de 18 años para registrarse</span>');
+    $(this).after('<span class="mensaje-error"style="color: red;">Debe ser mayor de 18 años para registrarse</span>');
   } else {
     $(this).removeClass('error');
     $(this).next('.mensaje-error').remove();
