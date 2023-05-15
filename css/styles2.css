@@ -4,9 +4,10 @@
 
   #feed-contenedor {
       overflow: hidden;
-      background-color: blueviolet;
+      background-color:#212F3D;
+      color: purple;
       margin: 5rem 0;
-      width: 90%;
+      width: 100%;
   }
 
   .contenedor-galeria {
@@ -16,7 +17,7 @@
   }
 
   .galeria-principal {
-      width: 90%;
+      width: 100%;
       display: flex;
       align-items: center;
       position: relative;
@@ -27,29 +28,29 @@
       align-items: center;
       position: absolute;
       z-index: 1;
-      font-size: 2rem;
+      font-size: 4rem;
       color: rgb(232, 212, 233);
-      width: 4.3rem;
-      height: 4.7rem;
-      background-color: #212F3D;
-      border: 100%;
+      width: 4rem;
+      height: 4rem;
+      background-color: none;
+      border: 10%;
       cursor: pointer;
   }
 
   .chevron span:hover {
-      background-color: #212F3D;
+      color: purple;
   }
 
   .chevron #prev {
-      padding-right: 0.5rem;
+      padding-right: 0.1rem;
       justify-content: flex-end;
-      left: -1.7rem;
+      left: 1 rem;
   }
 
   .chevron #next {
-      padding-right: 0.5rem;
+      padding-right: 0.1rem;
       justify-content: flex-end;
-      right: -1.7rem;
+      right: 1rem;
   }
 
   .galeria {
@@ -70,38 +71,9 @@
       object-position: center center;
   }
 
-  .image:hover .opacity-hover {
+  #feed-contenedor img:hover {
       width: 100%;
+      filter: opacity(.5);
   }
 
-  .caption {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      text-align: center;
-      transform: translateY(300px);
-      transition: transform 100ms linear;
-  }
-
-  .caption p {
-      color: white;
-      width: 80%;
-  }
-
-  .opacity-hover {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      transition: background-color 360ms linear;
-  }
-
-  .opacity-hover:hover {
-      background-color: #212F3D;
-  }
-
-  .opacity-hover:hover .caption {
-      transform: translateY(0px);
-  }
-
+ 
