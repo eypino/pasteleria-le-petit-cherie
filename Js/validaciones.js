@@ -250,7 +250,7 @@ $('#fonoReg').on('input', function() {
   if (!patron.test(fono)) {
     $(this).addClass('error');
     $(this).next('.mensaje-error').remove();
-    $(this).after('<span class="mensaje-error">Ingrese un número de teléfono válido (8 o 9 dígitos)</span>');
+    $(this).after('<span class="mensaje-error" style="color: red;">Ingrese un número de teléfono válido (8 o 9 dígitos)</span>');
   } else {
     $(this).removeClass('error');
     $(this).next('.mensaje-error').remove();
@@ -381,6 +381,8 @@ if (errores.length > 0) {
   // Recorrer la lista de errores y aplicar estilos
   errores.forEach(function(error) {
     $(error.campo).addClass('error');
+    $(error.campo).next('.mensaje-error').css('color', 'red');
+    $(error.campo).next('.error').css('color', 'red');
   });
 } else {
   // Si no hay errores, eliminar todos los estilos de error
