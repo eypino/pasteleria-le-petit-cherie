@@ -49,33 +49,33 @@ $(function() {
 
     function actualizarFeed() {
 
-      let contenido = '<div class="row" style="padding/left:5px">';
-      for (let p = currentIndex; p < currentIndex + 3; p++) {
-        let feed = datosJson[p % datosJson.length];
-        let titulo = feed.caption !== undefined ? feed.caption : '';
-        let tipo = feed.media_type;
-
-        if (tipo === 'VIDEO') {
-          contenido += '<div class="col-12 col-sm-6 col-md-4"><video style="width: 26rem;height: 28rem;" controls><source src="' + feed.media_url + '" type="video/mp4"><p style="position: absolute; color:white; align-self: center; width:26rem;">' + titulo + '</p></video></div>';
-        } else if (tipo === 'IMAGE') {
-          contenido += '<div class="col-12 col-sm-6 col-md-4"><img style="width: 26rem;height: 28rem;" title="' + titulo + '" src="' + feed.media_url + '" onclick="window.open(\'' + feed.permalink + '\'); loading="lazy"><p style="position: absolute; color:white; align-self: center; width:26rem;">' + titulo + '</p></div>';
+        let contenido = '<div class="row" style="padding/left:5px">';
+        for (let p = currentIndex; p < currentIndex + 3; p++) {
+          let feed = datosJson[p % datosJson.length];
+          let titulo = feed.caption !== undefined ? feed.caption : '';
+          let tipo = feed.media_type;
+  
+          if (tipo === 'VIDEO') {
+            contenido += '<div class="col-12 col-sm-6 col-md-4"><video style="width: 26rem;height: 28rem;" controls><source src="' + feed.media_url + '" type="video/mp4"><p style="position: absolute; color:white; align-self: center; width:26rem;">' + titulo + '</p></video></div>';
+          } else if (tipo === 'IMAGE') {
+            contenido += '<div class="col-12 col-sm-6 col-md-4"><img style="width: 26rem;height: 28rem;" title="' + titulo + '" src="' + feed.media_url + '" onclick="window.open(\'' + feed.permalink + '\'); loading="lazy"><p style="position: absolute; color:white; align-self: center; width:26rem;">' + titulo + '</p></div>';
+          }
         }
+        contenido += '</div>';
+        $('#insta').html(contenido);
       }
-      contenido += '</div>';
-      $('#insta').html(contenido);
-    }
+    });
   });
-});
 
 
 /*$(function(){
-  const token = 'IGQVJXa2xyeWlWa1pUQm9OQjdtMVVDMFEtUFgxeGNQOHRZAekNyaVJsQVJDdUZANYWx6Ym5KN0E0Y1ZATNWZAOSVVvRnJvbVRaNDBfMWllTnBLQW8xSTliU09GNHJTNWxvaHpuNi1OM1JmVXFMM0pXRDRnWAZDZD';
-  const url = `https://graph.instagram.com/me/media?fields=media_url,media_type,caption,permalink&refresh_access_token?grant_type=ig_refresh_token&&access_token=${token}`; 
+    const token = 'IGQVJXa2xyeWlWa1pUQm9OQjdtMVVDMFEtUFgxeGNQOHRZAekNyaVJsQVJDdUZANYWx6Ym5KN0E0Y1ZATNWZAOSVVvRnJvbVRaNDBfMWllTnBLQW8xSTliU09GNHJTNWxvaHpuNi1OM1JmVXFMM0pXRDRnWAZDZD';
+    const url = `https://graph.instagram.com/me/media?fields=media_url,media_type,caption,permalink&refresh_access_token?grant_type=ig_refresh_token&&access_token=${token}`; 
 
-  $.get(url).then(function(response){
-      //console.log('retorno: ', response.data);
-      let datosJson=response.data
-      let contenido= '<div class="row" style="padding/left:5px">';
+    $.get(url).then(function(response){
+        //console.log('retorno: ', response.data);
+        let datosJson=response.data
+        let contenido= '<div class="row" style="padding/left:5px">';
 
       for (let p=0; p<3;p++){
           let feed=datosJson[p];
@@ -200,8 +200,8 @@ const url = "https://graph.instagram.com/me/media?access_token"+token+"&fields=m
 
 fetch(url)
 
-.then(res => res.json())
-.then(data => createHtml(data.data));
+  .then(res => res.json())
+  .then(data => createHtml(data.data));
 
 function createHtml(data) {
 for (const img of data) {
