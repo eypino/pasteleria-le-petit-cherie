@@ -80,16 +80,18 @@
           <h2 class="fw-bold text-center py-5">Bienvenido</h2>
           <h4 class="fw-bold text-center py-0">Inicia tu sesión para continuar</h2>
             <!--LOGIN-->
-            <form action="#" onsubmit="checkBlankLogin(), checkBlankRegistro()">
+            <form action="#">
 
               <div class="mb-4 mt-5">
                 <label for="email" class="form-label">Correo Electrónico</label>
-                <input type="email" class="form-control" name="email" id="email">
+                <input type="email" class="form-control" name="email" id="emailLogin">
+                <div class="error-message" id="emailError"></div>
               </div>
 
               <div class="mb-4">
                 <label for="password" class="form-label">Contraseña</label>
-                <input type="password" class="form-control" name="password" id="password">
+                <input type="password" class="form-control" name="password" id="passwordLogin">
+                <div class="error-message" id="passwordError"></div>
               </div>
 
               <div class="mb-4 form-check">
@@ -98,7 +100,7 @@
               </div>
 
               <div class="d-grid">
-                <button type="submit" class="btn btn-primary"> Iniciar sesión </button>
+                <button type="submit" class="btn btn-primary" id="botonIniciarSesion"> Iniciar sesión </button>
               </div>
 
               <div class="my-3">
@@ -107,6 +109,7 @@
               </div>
 
             </form>
+
         </div>
       </div>
     </div>
@@ -123,7 +126,13 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
-    <script src="../js/validaciones.js"></script>
+    <!--SCRIPT BODY -->
+	<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+	crossorigin="anonymous"></script>
+	<script src="../js/validaciones.js"></script>
 </body>
 
 </html>
