@@ -235,26 +235,82 @@ $('#fechaNac').on('input', function() {
 
 
 ///FONO
-if (!fono) {
-  errores.push({campo: '#fonoReg', mensaje: 'Por favor, ingrese su número de teléfono'});
-} else {
-  $( '#fonoReg' ).removeClass('error');
+function validarTelefonoChile(telefono) {
+  // Eliminar espacios en blanco y guiones
+  telefono = telefono.replace(/\s/g, '').replace(/-/g, '');
+
+  // Verificar si está vacío
+  if (telefono.length === 0) {
+    return false;
+  }
+
+  // Verificar longitud y caracteres numéricos
+  if (telefono.length !== 9 || isNaN(telefono)) {
+    return false;
+  }
+
+  // Verificar prefijo
+  var prefijo = telefono.substring(0, 2);
+  if (prefijo !== '56') {
+    return false;
+  }
+
+  // Verificar primer dígito del número
+  var primerDigito = telefono.substring(2, 3);
+  if (primerDigito !== '9') {
+    return false;
+  }
+
+  return true;
 }
 
+var telefono = $('#fonoReg').val().trim();
+if (telefono.length === 0) {
+  errores.push({ campo: '#fonoReg', mensaje: 'Por favor, ingrese su número de teléfono' });
+} else if (!validarTelefonoChile(telefono)) {
+  errores.push({ campo: '#fonoReg', mensaje: 'Por favor, ingrese un número de teléfono válido de Chile' });
+} else {
+  $('#fonoReg').removeClass('error');
+}
+
+$('.mensaje-error').remove(); // Eliminar mensajes de error previos
+errores.forEach(function(error) {
+  $(error.campo).after('<span class="mensaje-error" style="color: red;">' + error.mensaje + '</span>');
+});
+
+if (errores.length === 0) {
+  alert('Todos los campos están completos y correctos');
+  window.location.href = '../index.html'; // redirigir a la página de inicio
+}
+
+if (errores.length > 0) {
+  // Recorrer la lista de errores y aplicar estilos
+  errores.forEach(function(error) {
+    $(error.campo).addClass('error');
+    $(error.campo).next('.mensaje-error').css('color', 'red');
+  });
+} else {
+  // Si no hay errores, eliminar todos los estilos de error
+  $('input').removeClass('error');
+}
 
 $('#fonoReg').on('input', function() {
   let fono = $(this).val().trim();
-  let patron = /^\d{8,9}$/; // Patron para validar número de teléfono (8 o 9 dígitos)
-  
-  if (!patron.test(fono)) {
+
+  if (!fono) {
     $(this).addClass('error');
     $(this).next('.mensaje-error').remove();
-    $(this).after('<span class="mensaje-error">Ingrese un número de teléfono válido (8 o 9 dígitos)</span>');
+    $(this).after('<span class="mensaje-error" style="color: red;">Por favor, ingrese su número de teléfono</span>');
+  } else if (fono.length < 8 || fono.length > 9) {
+    $(this).addClass('error');
+    $(this).next('.mensaje-error').remove();
+    $(this).after('<span class="mensaje-error" style="color: red;">El número de teléfono debe tener 8 o 9 dígitos</span>');
   } else {
     $(this).removeClass('error');
     $(this).next('.mensaje-error').remove();
   }
 });
+
 
 ///DIRECCION
 if (!direccion) {
@@ -368,7 +424,7 @@ if (!terminos) {
 // Mostrar errores
 $('.mensaje-error').remove(); // Eliminar mensajes de error previos
 errores.forEach(function(error) {
-  $(error.campo).after('<span class="mensaje-error" style="color: red; text-align: center;">' + error.mensaje + '</span>');
+  $(error.campo).after('<span class="mensaje-error" style="color: red;">' + error.mensaje + '</span>');
 });
 
 if (errores.length === 0) {
@@ -380,6 +436,8 @@ if (errores.length > 0) {
   // Recorrer la lista de errores y aplicar estilos
   errores.forEach(function(error) {
     $(error.campo).addClass('error');
+    $(error.campo).next('.mensaje-error').css('color', 'red');
+    $(error.campo).next('.error').css('color', 'red');
   });
 } else {
   // Si no hay errores, eliminar todos los estilos de error
@@ -410,11 +468,11 @@ $(document).ready(function() {
 
     // Verificar si el campo de correo electrónico está vacío o no es válido
     if (!email) {
-      $('#emailError').text('Por favor ingrese su correo electrónico').css('color', 'red', 'text-align', 'center');
+      $('#emailError').text('Por favor ingrese su correo electrónico').css('color', 'red');
       $('#emailLogin').addClass('error');
       errores.push('email');
     } else if (!validarEmail(email)) {
-      $('#emailError').text('Por favor ingrese un correo electrónico válido').css('color', 'red', 'text-align', 'center');
+      $('#emailError').text('Por favor ingrese un correo electrónico válido').css('color', 'red');
       $('#emailLogin').addClass('error');
       errores.push('email');
     } else {
@@ -424,11 +482,11 @@ $(document).ready(function() {
     
     // Verificar si el campo de contraseña está vacío o es menor a 8 caracteres
     if (!password) {
-      $('#passwordError').text('Por favor ingrese su contraseña').css('color', 'red', 'text-align', 'center');
+      $('#passwordError').text('Por favor ingrese su contraseña').css('color', 'red');
       $('#passwordLogin').addClass('error');
       errores.push('password');
     } else if (password.length < 8) {
-      $('#passwordError').text('La contraseña debe tener al menos 8 caracteres').css('color', 'red', 'text-align', 'center');
+      $('#passwordError').text('La contraseña debe tener al menos 8 caracteres').css('color', 'red');
       $('#passwordLogin').addClass('error');
       errores.push('password');
     } else {
