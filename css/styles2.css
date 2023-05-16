@@ -75,5 +75,11 @@
       width: 100%;
       filter: opacity(.5);
   }
-
+  @media(max-width:900px){
+    
+    #insta p{
+        display:none;
+    }
+  
+  }
  
