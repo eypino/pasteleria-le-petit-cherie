@@ -236,26 +236,82 @@ $('#fechaNac').on('input', function() {
 
 
 ///FONO
-if (!fono) {
-  errores.push({campo: '#fonoReg', mensaje: 'Por favor, ingrese su número de teléfono'});
-} else {
-  $( '#fonoReg' ).removeClass('error');
+function validarTelefonoChile(telefono) {
+  // Eliminar espacios en blanco y guiones
+  telefono = telefono.replace(/\s/g, '').replace(/-/g, '');
+
+  // Verificar si está vacío
+  if (telefono.length === 0) {
+    return false;
+  }
+
+  // Verificar longitud y caracteres numéricos
+  if (telefono.length !== 9 || isNaN(telefono)) {
+    return false;
+  }
+
+  // Verificar prefijo
+  var prefijo = telefono.substring(0, 2);
+  if (prefijo !== '56') {
+    return false;
+  }
+
+  // Verificar primer dígito del número
+  var primerDigito = telefono.substring(2, 3);
+  if (primerDigito !== '9') {
+    return false;
+  }
+
+  return true;
 }
 
+var telefono = $('#fonoReg').val().trim();
+if (telefono.length === 0) {
+  errores.push({ campo: '#fonoReg', mensaje: 'Por favor, ingrese su número de teléfono' });
+} else if (!validarTelefonoChile(telefono)) {
+  errores.push({ campo: '#fonoReg', mensaje: 'Por favor, ingrese un número de teléfono válido de Chile' });
+} else {
+  $('#fonoReg').removeClass('error');
+}
+
+$('.mensaje-error').remove(); // Eliminar mensajes de error previos
+errores.forEach(function(error) {
+  $(error.campo).after('<span class="mensaje-error" style="color: red;">' + error.mensaje + '</span>');
+});
+
+if (errores.length === 0) {
+  alert('Todos los campos están completos y correctos');
+  window.location.href = '../index.html'; // redirigir a la página de inicio
+}
+
+if (errores.length > 0) {
+  // Recorrer la lista de errores y aplicar estilos
+  errores.forEach(function(error) {
+    $(error.campo).addClass('error');
+    $(error.campo).next('.mensaje-error').css('color', 'red');
+  });
+} else {
+  // Si no hay errores, eliminar todos los estilos de error
+  $('input').removeClass('error');
+}
 
 $('#fonoReg').on('input', function() {
   let fono = $(this).val().trim();
-  let patron = /^\d{8,9}$/; // Patron para validar número de teléfono (8 o 9 dígitos)
-  
-  if (!patron.test(fono)) {
+
+  if (!fono) {
     $(this).addClass('error');
     $(this).next('.mensaje-error').remove();
-    $(this).after('<span class="mensaje-error" style="color: red;">Ingrese un número de teléfono válido (8 o 9 dígitos)</span>');
+    $(this).after('<span class="mensaje-error" style="color: red;">Por favor, ingrese su número de teléfono</span>');
+  } else if (fono.length < 8 || fono.length > 9) {
+    $(this).addClass('error');
+    $(this).next('.mensaje-error').remove();
+    $(this).after('<span class="mensaje-error" style="color: red;">El número de teléfono debe tener 8 o 9 dígitos</span>');
   } else {
     $(this).removeClass('error');
     $(this).next('.mensaje-error').remove();
   }
 });
+
 
 ///DIRECCION
 if (!direccion) {
