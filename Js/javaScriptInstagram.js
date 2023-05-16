@@ -1,6 +1,6 @@
 $(function() {
 
-  const token = '';
+  const token = 'IGQVJYNHRlb2dlRTd2OFl0blZAFcE15aWhSVzBOWlNxOEQzelJKaGs4ZA1ZAUZAEpYUVBycnphanhoelp2VVN2a0U3MVpDTVMyWE9YNmxNbk54LVFGUFBFZAGhXdWs1YmYzeXdLRW45WXFoUDk5YlNOTmhjNAZDZD';
   const url = `https://graph.instagram.com/me/media?fields=media_url,media_type,caption,permalink&refresh_access_token?grant_type=ig_refresh_token&&access_token=${token}`;
 
   $.get(url).then(function(response) {
@@ -14,9 +14,9 @@ $(function() {
       let tipo = feed.media_type;
 
       if (tipo === 'VIDEO') {
-        contenido += '<div class="col-12 col-sm-6 col-md-4"><video style="width: 26rem;height: 28rem; transition: 2s;" controls><source src="' + feed.media_url + '" type="video/mp4"><p style="position: absolute; color:white; align-self: center; width:26rem;">' + titulo + '</p></video></div>';
+        contenido += '<div class="col-12 col-sm-6 col-md-4" style: "align-items: center;"><video style="width: 26rem;height: 28rem; transition: 2s;" controls><source src="' + feed.media_url + '" type="video/mp4"><center><p style="position: absolute; color:white; align-self: center; width:30%; padding-left: 0.5rem;">' + titulo + '</p></center></video></div>';
       } else if (tipo === 'IMAGE') {
-        contenido += '<div class="col-12 col-sm-6 col-md-4"><img style="width: 26rem;height: 28rem; transition: 2s;" title="' + titulo + '" src="' + feed.media_url + '" onclick="window.open(\'' + feed.permalink + '\');"><p style="position: absolute; color:white; align-self: center; width:26rem;">' + titulo + '</p></div>';
+        contenido += '<div class="col-12 col-sm-6 col-md-4" style: "align-items: center;"><img style="width: 26rem;height: 28rem; transition: 2s;" title="' + titulo + '" src="' + feed.media_url + '" onclick="window.open(\'' + feed.permalink + '\');"><center><p style="position: absolute; color:white; align-self: center; width:30%; padding-left: 0.5rem;">' + titulo + '</p></center></div>';
       }
 
       if (p === currentIndex) {
@@ -56,9 +56,9 @@ $(function() {
           let tipo = feed.media_type;
   
           if (tipo === 'VIDEO') {
-            contenido += '<div class="col-12 col-sm-6 col-md-4"><video style="width: 26rem;height: 28rem;" controls><source src="' + feed.media_url + '" type="video/mp4"><p style="position: absolute; color:white; align-self: center; width:26rem;">' + titulo + '</p></video></div>';
+            contenido += '<div class="col-12 col-sm-6 col-md-4" style: "align-items: center;"><video style="width: 26rem;height: 28rem; transition: 2s;" controls><source src="' + feed.media_url + '" type="video/mp4"><center><p style="position: absolute; color:white; align-self: center; width:30%;; padding-left: 0.5rem;">' + titulo + '</p></center></video></div>';
           } else if (tipo === 'IMAGE') {
-            contenido += '<div class="col-12 col-sm-6 col-md-4"><img style="width: 26rem;height: 28rem;" title="' + titulo + '" src="' + feed.media_url + '" onclick="window.open(\'' + feed.permalink + '\'); loading="lazy"><p style="position: absolute; color:white; align-self: center; width:26rem;">' + titulo + '</p></div>';
+            contenido += '<div class="col-12 col-sm-6 col-md-4" style: "align-items: center;"><img style="width: 26rem;height: 28rem; transition: 2s;" title="' + titulo + '" src="' + feed.media_url + '" onclick="window.open(\'' + feed.permalink + '\');"><center><p style="position: absolute; color:white; align-self: center; width:30%;; padding-left: 0.5rem;">' + titulo + '</p></center></div>';
           }
         }
         contenido += '</div>';
