@@ -1,43 +1,47 @@
+.navbar-dark .navbar-nav .nav-link {
+    color: antiquewhite !important;
+    font-size: 20px;
 
-.navbar-dark .navbar-nav .nav-link{
-    color:antiquewhite !important;
-    font-size:20px;
-    
 }
-body{
+
+body {
     /*background: rgb(232, 212, 233);*/
     background-color: rgb(232, 212, 233);
-  }
+}
 
-.bg{
+.bg {
     background-image: url(../img/login_pic.jpg);
     background-position: center center;
-  
-  }
 
-.body-background{
+}
+
+.body-background {
     background-color: black !important;
 }
-.body-background2{
-    background-color:rgb(232, 212, 233);
+
+.body-background2 {
+    background-color: rgb(232, 212, 233);
 }
-.carrito{
+
+.carrito {
     min-height: 70%;
     max-width: 1000px;
     margin: 0 auto;
     width: 100%;
 }
 
-.table-productos{
-    display:flexbox;
+.table-productos {
+    display: flexbox;
 }
+
 .table-productos {
     width: 30%;
     object-fit: contain;
     border-radius: 6px;
     margin-right: 20px;
 }
-.table-cantidad{
+
+.table-cantidad {
     width: 30%;
     border: none;
     outline: 0;
@@ -46,95 +50,105 @@ body{
     margin-right: 10px;
     margin-bottom: 10px;
 }
-.table-precio{
+
+.table-precio {
     max-width: 200px;
     width: 30%;
 }
-.img-carrito{
+
+.img-carrito {
     width: 50%;
     height: 50%;
     align-self: center;
 }
 
-  footer{
+footer {
     padding: 0% !important;
     margin: 0% !important;
     text-align: center;
-    background-color:#212F3D;
+    background-color: #212F3D;
     color: whitesmoke;
     font-size: 15px;
-  }
-.navbar-dark .navbar-brand{
+}
+
+.navbar-dark .navbar-brand {
     color: purple !important;
     font-size: 40px;
 }
 
-.nav-item{
+.nav-item {
     padding-right: 5px;
 }
 
 
-.header-visible{
+.header-visible {
     height: 10%;
     min-height: 136px;
-    
+
 }
 
-.navbar-toggler{
-    --border:none !important;
+.navbar-toggler {
+    --border: none !important;
     color: purple !important;
-    border-color:purple !important;
+    border-color: purple !important;
     background-color: purple !important;
 }
 
-.navbar-toggler:focus{
+.navbar-toggler:focus {
     box-shadow: none !important;
 }
 
- .btn-dark{
+.btn-dark {
     font-size: 20px !important;
     color: white !important;
     background-color: purple !important;
 
 }
 
-.dropdown-menu{
+.btn-outline-danger{
+    color: white !important;
+    background-color: purple !important;
+    border-color: purple !important;
+
+}
+
+.dropdown-menu {
     background-color: purple !important;
 }
 
 
-.dropdown-item{
+.dropdown-item {
     color: white !important;
 }
 
-.table{
-    color:purple !important;
+.table {
+    color: purple !important;
     margin-left: 5%;
     margin-right: 5%;
     align-self: center;
     max-width: 90%;
 }
 
-.text-carrito{
+.text-carrito {
     color: purple;
     font-weight: bold;
 }
 
 
-@media (max-width:900px){
-    .navbar-dark .navbar-brand{
+@media (max-width:900px) {
+    .navbar-dark .navbar-brand {
         color: purple !important;
         font-size: 25px;
         margin-top: 20%;
         margin-bottom: 20%;
     }
 
-    #carouselExampleCaptions{
+    #carouselExampleCaptions {
         margin-top: 11rem !important;
-      }
-      #carouselExampleCaptions2{
-        margin-top: 2.8rem !important;
-      }
-      
-}
+    }
 
+    #carouselExampleCaptions2 {
+        margin-top: 2.8rem !important;
+    }
+
+}
