@@ -1,4 +1,3 @@
-
 /* JS LOGIN*/
 function checkBlankLogin(){
   if (document.getElementById('email').value =="") {
@@ -12,7 +11,7 @@ function checkBlankRegistro(){
     alert('Sesión iniciada exitosamente');
     return false;
   }else if (document.getElementById('email').value ==""){
-
+ 
   }
   else{
     alert('Email o contraseña errónea')
@@ -427,7 +426,7 @@ if (!terminos) {
 // Mostrar errores
 $('.mensaje-error').remove(); // Eliminar mensajes de error previos
 errores.forEach(function(error) {
-  $(error.campo).after('<span class="mensaje-error" style="color: red;">' + error.mensaje + '</span>');
+  $(error.campo).after('<span class="mensaje-error" style="color: red; text-align: center;">' + error.mensaje + '</span>');
 });
 
 if (errores.length === 0) {
@@ -439,8 +438,8 @@ if (errores.length > 0) {
   // Recorrer la lista de errores y aplicar estilos
   errores.forEach(function(error) {
     $(error.campo).addClass('error');
-    $(error.campo).next('.mensaje-error').css('color', 'red');
-    $(error.campo).next('.error').css('color', 'red');
+    $(error.campo).next('.mensaje-error').css('color', 'red', 'text-align', 'center');
+    $(error.campo).next('.error').css('color', 'red', 'text-align', 'center');
   });
 } else {
   // Si no hay errores, eliminar todos los estilos de error
@@ -471,11 +470,11 @@ $(document).ready(function() {
 
     // Verificar si el campo de correo electrónico está vacío o no es válido
     if (!email) {
-      $('#emailError').text('Por favor ingrese su correo electrónico').css('color', 'red');
+      $('#emailError').text('Por favor ingrese su correo electrónico').css('color', 'red', 'text-align', 'center');
       $('#emailLogin').addClass('error');
       errores.push('email');
     } else if (!validarEmail(email)) {
-      $('#emailError').text('Por favor ingrese un correo electrónico válido').css('color', 'red');
+      $('#emailError').text('Por favor ingrese un correo electrónico válido').css('color', 'red', 'text-align', 'center');
       $('#emailLogin').addClass('error');
       errores.push('email');
     } else {
@@ -485,11 +484,11 @@ $(document).ready(function() {
     
     // Verificar si el campo de contraseña está vacío o es menor a 8 caracteres
     if (!password) {
-      $('#passwordError').text('Por favor ingrese su contraseña').css('color', 'red');
+      $('#passwordError').text('Por favor ingrese su contraseña').css('color', 'red', 'text-align', 'center');
       $('#passwordLogin').addClass('error');
       errores.push('password');
     } else if (password.length < 8) {
-      $('#passwordError').text('La contraseña debe tener al menos 8 caracteres').css('color', 'red');
+      $('#passwordError').text('La contraseña debe tener al menos 8 caracteres').css('color', 'red', 'text-align', 'center');
       $('#passwordLogin').addClass('error');
       errores.push('password');
     } else {
