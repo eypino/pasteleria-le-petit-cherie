@@ -134,16 +134,16 @@ $('#nombreReg').on('input', function() {
 });
 
 
-//APELLIDOS
-if (!apellidos) {
-  errores.push({campo: '#apellidoReg', mensaje: 'Por favor, ingrese su apellido'});
+// APELLIDOS
+if (!apellidos || apellidos.length < 2) {
+  errores.push({ campo: '#apellidoReg', mensaje: 'Por favor, ingrese un mínimo de dos caracteres para el apellido' });
 } else {
-  $( '#apellidoReg' ).removeClass('error');
+  $('#apellidoReg').removeClass('error');
 }
 
 $('#apellidoReg').on('input', function() {
-  let apellido = $(this).val().trim();
-  if (!apellido) {
+  let apellidos = $(this).val().trim();
+  if (!apellidos) {
     $(this).addClass('error');
     $(this).next('.mensaje-error').remove();
     $(this).after('<span class="mensaje-error">Por favor, ingrese su apellido</span>');
@@ -152,6 +152,7 @@ $('#apellidoReg').on('input', function() {
     $(this).next('.mensaje-error').remove();
   }
 });
+
 
 //RUT
 
@@ -324,20 +325,21 @@ $('#direccion').on('input', function() {
   let direccion = $(this).val().trim();
   let longitudMinima = 5;
   let longitudMaxima = 100;
-  
+
   if (direccion.length < longitudMinima) {
     $(this).addClass('error');
     $(this).next('.mensaje-error').remove();
-    $(this).after(`<span class="mensaje-error">La dirección debe tener al menos ${longitudMinima} caracteres</span>`);
+    $(this).after(`<span class="mensaje-error" style="color: red;">La dirección debe tener al menos ${longitudMinima} caracteres</span>`);
   } else if (direccion.length > longitudMaxima) {
     $(this).addClass('error');
     $(this).next('.mensaje-error').remove();
-    $(this).after(`<span class="mensaje-error">La dirección no debe tener más de ${longitudMaxima} caracteres</span>`);
+    $(this).after(`<span class="mensaje-error" style="color: red;">La dirección no debe tener más de ${longitudMaxima} caracteres</span>`);
   } else {
     $(this).removeClass('error');
     $(this).next('.mensaje-error').remove();
   }
 });
+
 
 
 //CONTRASEÑAS
