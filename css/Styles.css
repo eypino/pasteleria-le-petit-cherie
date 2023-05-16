@@ -80,15 +80,6 @@ body{
     
 }
 
-
-@media only screen and(max-width:600px){
-    .navbar-dark .navbar-brand{
-        color: purple !important;
-        font-size: 25px;
-        margin-top: 20%;
-    }
-}
-
 .navbar-toggler{
     --border:none !important;
     color: purple !important;
@@ -128,3 +119,19 @@ body{
     color: purple;
     font-weight: bold;
 }
+
+
+@media (max-width:900px){
+    .navbar-dark .navbar-brand{
+        color: purple !important;
+        font-size: 25px;
+        margin-top: 20%;
+        margin-bottom: 20%;
+    }
+
+    #carouselExampleCaptions{
+        margin-top: 11rem !important;
+      }
+      
+}
+
