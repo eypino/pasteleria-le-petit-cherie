@@ -249,12 +249,5 @@ if (e.target.id === 'next' || e.target.parentElement.id === 'next') {
   feed.scrollLeft -= feed.offsetWidth;
 }
 }*/
-=======
-  if (e.target.id === 'next' || e.target.parentElement.id === 'next') {
-    feed.scrollLeft += feed.offsetWidth;
-  } else {
-    feed.scrollLeft -= feed.offsetWidth;
-  }
-}*/
 
 
